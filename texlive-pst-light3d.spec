@@ -53,6 +53,7 @@ characters and PSTricks graphics, like lines, curves, plots,
 %doc %{_texmfdistdir}/doc/generic/pst-light3d/pst-light3d-doc.tex
 #- source
 %doc %{_texmfdistdir}/source/generic/pst-light3d/Makefile
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -63,3 +64,5 @@ characters and PSTricks graphics, like lines, curves, plots,
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar dvips tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
