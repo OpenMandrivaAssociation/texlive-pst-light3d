@@ -54,3 +54,17 @@ characters and PSTricks graphics, like lines, curves, plots,
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar dvips tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.12-2
++ Revision: 755322
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.12-1
++ Revision: 719366
+- texlive-pst-light3d
+- texlive-pst-light3d
+- texlive-pst-light3d
+- texlive-pst-light3d
+
