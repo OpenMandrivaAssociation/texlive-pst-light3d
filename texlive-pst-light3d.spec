@@ -6,7 +6,7 @@
 # catalog-version 0.12
 Name:		texlive-pst-light3d
 Version:	0.12
-Release:	3
+Release:	4
 Summary:	3D lighting effects for pstricks
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-light3d
