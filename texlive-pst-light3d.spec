@@ -1,6 +1,6 @@
 Name:		texlive-pst-light3d
 Version:	15878
-Release:	1
+Release:	2
 Summary:	3D lighting effects for pstricks
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-light3d
