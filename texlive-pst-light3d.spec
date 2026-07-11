@@ -1,51 +1,22 @@
-Name:		texlive-pst-light3d
-Version:	15878
-Release:	2
-Summary:	3D lighting effects for pstricks
+%global tl_name pst-light3d
+%global tl_revision 15878
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.12
+Release:	%{tl_revision}.1
+Summary:	Three dimensional lighting effects (PSTricks)
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-light3d
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-light3d.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-light3d.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-light3d.source.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-light3d.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-light3d.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-light3d.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-A PSTricks package for three dimensional lighting effects on
-characters and PSTricks graphics, like lines, curves, plots,
-...
+A PSTricks package for three dimensional lighting effects on characters
+and PSTricks graphics, like lines, curves, plots, ...
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/dvips/pst-light3d/pst-light3d.pro
-%{_texmfdistdir}/tex/generic/pst-light3d/pst-light3d.tex
-%{_texmfdistdir}/tex/latex/pst-light3d/pst-light3d.sty
-%doc %{_texmfdistdir}/doc/generic/pst-light3d/Changes
-%doc %{_texmfdistdir}/doc/generic/pst-light3d/README
-%doc %{_texmfdistdir}/doc/generic/pst-light3d/pst-light3d-doc.bib
-%doc %{_texmfdistdir}/doc/generic/pst-light3d/pst-light3d-doc.pdf
-%doc %{_texmfdistdir}/doc/generic/pst-light3d/pst-light3d-doc.tex
-#- source
-%doc %{_texmfdistdir}/source/generic/pst-light3d/Makefile
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar dvips tex doc source %{buildroot}%{_texmfdistdir}
